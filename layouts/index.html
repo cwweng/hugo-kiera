@@ -2,8 +2,8 @@
 
 <section id="home">
         <ul>
-          {{ range $index, $page := first 10 (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
-          <li {{if eq $index 0}}class="first"{{end}}>
+          {{ range (.Paginate (where .Site.RegularPages "Section" "in" .Site.Params.mainSections)).Pages }}
+          <li>
             <h1><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1> 
             {{ partial "aside" . }}
             <p>{{ .Summary }}</p>
@@ -12,6 +12,7 @@
             {{ end }}
           </li>
           {{ end }}
+          {{ template "_internal/pagination.html" . }}
         </ul>
       </section>
 
