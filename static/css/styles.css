@@ -26,7 +26,7 @@ time {
 }
 
 #container > * {
-  width: 700px;
+  width: 800px;
   margin: 0 auto;
 }
 
@@ -324,11 +324,14 @@ figure.float-right figcaption {
 
 table {
   width: 100%;
-  border-bottom: solid 1px #cecece;
 }
 
 table thead {
   background-color: #cecece;
+}
+
+table td {
+  border-bottom: solid 1px #f0f0f0;
 }
 
 blockquote {
